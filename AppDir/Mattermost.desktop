@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Mattermost Desktop
+Comment=Modern, self-hosted messaging across web, PC and phones, built on open source software
+Exec=AppRun %U
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Icon=icon
+Categories=Network;Office;
+StartupWMClass=Mattermost
+StartupNotify=true
