@@ -15,7 +15,7 @@ all:
 
 	chmod +x AppDir/AppRun
 
-	appimagetool AppDir $(OUTPUT)
+	export ARCH=x86_64 && bin/appimagetool.AppImage AppDir $(OUTPUT)
 
 	rm -f $(DESTINATION)
 	rm -rf mattermost-desktop-4.3.1-linux-x64
