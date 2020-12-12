@@ -12,7 +12,7 @@
 PWD:=$(shell pwd)
 
 
-all: clean
+all:  clean
 	mkdir --parents $(PWD)/build/Boilerplate.AppDir/mattermost
 	apprepo --destination=$(PWD)/build appdir boilerplate libatk1.0-0 libatk-bridge2.0-0 libgtk-3-0
 	echo '' >> $(PWD)/build/Boilerplate.AppDir/AppRun
@@ -21,8 +21,8 @@ all: clean
 	echo 'export LD_LIBRARY_PATH=$${LD_LIBRARY_PATH}' >> $(PWD)/build/Boilerplate.AppDir/AppRun
 	echo '' >> $(PWD)/build/Boilerplate.AppDir/AppRun
 	echo '' >> $(PWD)/build/Boilerplate.AppDir/AppRun
-	echo 'UUC_VALUE=`cat /proc/sys/kernel/unprivileged_userns_clone 2> /dev/null`' >> $(PWD)/build/Boilerplate.AppDir/AppRun
 	echo '' >> $(PWD)/build/Boilerplate.AppDir/AppRun
+	echo 'UUC_VALUE=`cat /proc/sys/kernel/unprivileged_userns_clone 2> /dev/null`' >> $(PWD)/build/Boilerplate.AppDir/AppRun
 	echo '' >> $(PWD)/build/Boilerplate.AppDir/AppRun
 	echo '' >> $(PWD)/build/Boilerplate.AppDir/AppRun
 	echo 'if [ -z "$${UUC_VALUE}" ]' >> $(PWD)/build/Boilerplate.AppDir/AppRun
@@ -42,7 +42,7 @@ all: clean
 	cp --force $(PWD)/AppDir/*.png $(PWD)/build/Boilerplate.AppDir/ || true
 	cp --force $(PWD)/AppDir/*.svg $(PWD)/build/Boilerplate.AppDir/ || true
 
-	export ARCH=x86_64 && $(PWD)/bin/appimagetool.AppImage $(PWD)/build/AppDir $(PWD)/Mattermost.AppImage
+	export ARCH=x86_64 && $(PWD)/bin/appimagetool.AppImage $(PWD)/build/Boilerplate.AppDir $(PWD)/Mattermost.AppImage
 	chmod +x $(PWD)/Mattermost.AppImage
 
 
